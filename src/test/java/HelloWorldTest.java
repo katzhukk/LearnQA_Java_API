@@ -8,12 +8,4 @@ public class HelloWorldTest {
     public void testHelloWorld(){
         System.out.println("Hello from Ekaterina!");
     }
-
-    @Test
-    public void testGetText(){
-        Response response = RestAssured
-                .get("https://playground.learnqa.ru/api/get_text")
-                .andReturn();
-        response.prettyPrint();
-    }
 }
