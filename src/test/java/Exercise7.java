@@ -6,10 +6,11 @@ public class Exercise7 {
 
     @Test
     public void testLongRedirect() {
-
         String locationHeader;
-        String url = "https://playground.learnqa.ru/api/long_redirect";
         int statusCode = 0;
+        int count_redirect = 0;
+
+        String url = "https://playground.learnqa.ru/api/long_redirect";
 
         while(statusCode != 200)
         {
@@ -26,6 +27,9 @@ public class Exercise7 {
             url = locationHeader;
             statusCode = response.getStatusCode();
             System.out.println(statusCode);
+            count_redirect++;
         }
+
+        System.out.println("Количество редиректов = " + count_redirect);
     }
 }
